@@ -1,0 +1,28 @@
+import pyautogui
+import subprocess
+import win32api
+import time
+# prs=subprocess.Popen(["C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"])
+prs=subprocess.Popen(["C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"])
+time.sleep(1)
+pree=pyautogui.hotkey('ctrl', 'shift', 'n')
+time.sleep(2)
+pyautogui.typewrite('https://www.bilibili.com/')
+pyautogui.press('enter')
+# pyautogui.size()
+# (1366, 768)
+pyautogui.press('enter')
+# pyautogui.press('f11')
+pp = pyautogui.hotkey('win','up')
+# width, height = pyautogui.size()
+time.sleep(5)
+print(pyautogui.size())
+pyautogui.moveTo(1200, 310)
+# input()
+time.sleep(5)
+pyautogui.click(button='left')
+pyautogui.typewrite('username',interval=0.2)
+pyautogui.press('tab')
+pyautogui.typewrite('password',interval=0.2)
+time.sleep(1)
+pyautogui.press('enter')
