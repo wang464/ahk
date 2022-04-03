@@ -39,13 +39,3 @@ space & k::down
 space & l::right
 space & <::Home
 space & >::End
-
-; 初始化函数
-Init(){
-    Menu, Tray, Icon, 1.ico, , 1
-    Menu, Tray, Tip, Link
-    Menu, Tray, NoStandard
-    ; 菜单检查
-    if S_IsSpaceOn{
-        Menu, Config, Check, Space
-    }

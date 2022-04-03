@@ -1,5 +1,21 @@
+;说明
+; ! = ALT
+; ^ = CTRL
+; + = SHIFT
+; # = WIN
+;LAlt
+
 ; 禁用大写
 SetCapsLockState, AlwaysOff ;
+
+;使用?yx会输入邮箱
+:*:?yx::
+Send, w_y_wei@qq.com
+return
+;使用?yx会输入邮箱
+:*:?yy::
+Send, '能不能是中文'
+return
 
 ; git命令相关
 :*:?gc::
@@ -88,3 +104,4 @@ CapsLock & l::
   Send {Enter}
   KeyWait j
   return
+
