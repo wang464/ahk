@@ -2,7 +2,9 @@
 # from re import A
 
 
-# explorer .
-# explorer dist
-# explorer dist
+# explor  j jk  lnmjder .
+# explor  ,. hjkl,. ,,.,,., ,.,.er dis  jkt
+    # explorer distLLLddddddd
+
+
 
