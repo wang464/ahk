@@ -41,7 +41,7 @@ CapsLock & k::
   Send +{End}
   KeyWait k
   return
-  ;;删除当前位置到行首
+;光标向前选择
 CapsLock & u::
   Send +{Home}
   KeyWait u
