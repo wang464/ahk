@@ -1,136 +1,84 @@
-﻿;说明
-; ! = ALT
-; ^ = CTRL
-; + = SHIFT
-; # = WIN
-;LAlt
+﻿; 光标操作
 
-;;按住alt第二行是数字1-9-0
-;; 数字0-9
-LAlt & a::
-  Send {1}
-  KeyWait a
-  return
-
-LAlt & s::
-  Send {2}
-  KeyWait s
-  return
-
-LAlt & d::
-  Send {3}
-  KeyWait d
-  return
-
-LAlt & f::
-  Send {4}
-  KeyWait f
-  return
-
-LAlt & g::
-  Send {5}
-  KeyWait g
-  return
-
-LAlt & h::
-  Send {6}
-  KeyWait h
-  return
-
-LAlt & j::
-  Send {7}
-  KeyWait j
-  return
-
-LAlt & k::
-  Send {8}
-  KeyWait k
-  return
-
-LAlt & l::
-  Send {9}
-  KeyWait l
-  return
-; `是转义字符`后面的还是原来的意思
-LAlt & `;::
-  Send {0}
-  KeyWait `;
-  return
-
-; 第一行是符号
-LAlt & q::
-  Send {!}
-  KeyWait q
-  return
-
-LAlt & w::
-  Send {@}
-  KeyWait w
-  return
-
-LAlt & e::
-  Send {#}
+;;光标移动到行首
+CapsLock & a::
+if getkeystate("alt") = 0
+    Send, {Home}
+else
+    Send, +{Home}
+return
+;;光标移动到行末
+CapsLock & e::
+  Send {End}
   KeyWait e
   return
 
-LAlt & r::
-  Send {$}
-  KeyWait r
+;;光标左移
+ CapsLock & b::
+  Send {Left}
+  KeyWait b
+  return
+;;光标右移
+CapsLock & f::
+  Send {Right}
+  KeyWait f
   return
 
-LAlt & t::
-  Send {`%}
-  KeyWait t
+;;光标下移
+CapsLock & n::
+  Send {Down}
+  KeyWait n
   return
-
-LAlt & y::
-  Send {^}
-  KeyWait y
-  return
-
-LAlt & u::
-  Send {&}
-  KeyWait u
-  return
-
-LAlt & i::
-  Send {*}
-  KeyWait i
-  return
-
-LAlt & o::
-  Send {(}
-  KeyWait o
-  return
-
-LAlt & p::
-  Send {-}
+  ;;光标上移
+CapsLock & p::
+  Send {Up}
   KeyWait p
   return
 
-LAlt & m::
-  Send {+}
-  KeyWait m
+
+;光标向后选择
+CapsLock & k::
+  Send +{End}
+  KeyWait k
+  return
+  ;;删除当前位置到行首
+CapsLock & u::
+  Send +{Home}
+  KeyWait u
+  return 
+
+; 删除操作
+;;向右删除单词
+CapsLock & d::
+  Send {Del}
+  KeyWait d
+  return
+;;向左删除单词
+CapsLock & h::
+  Send {Backspace}
+  KeyWait h
   return
 
-CapsLock & o::
-current_clipboard = %Clipboard%
-Send ^c
-ClipWait, 1
-Run http://www.bing.com/search?q=%Clipboard%
-Clipboard = %current_clipboard%
+; 其他操作
+  ;;应用窗口切换
+CapsLock & l::
+  Send !{tab}
+  KeyWait l
+  return
+
+  ;;回车键
+ CapsLock & j::
+  Send {Enter}
+  KeyWait j
+  return
+
+; 文字操作
+; 输入? zz输出括号里面的内容.
+:*:?zz:: 
+FastInput("暂时没想好要输出什么") 
 return
 
-
-
-
-
-
-:*:?zz::  ; 按下快捷键组合： `]` 和 `b`
-FastInput("【文章推荐阅读】") ; 它会自动帮你输入 `【文章推荐阅读】`，你可以随便修改双引号中的内容
-return
-
-; 定义了一个 `FastInput` 方法，用来将你定义好的中文短语粘贴出来，简单解释下：
+; 定义了一个 `FastInput` 方法，用来将你定义好的短语粘贴出来,因为中英文会切换粘贴结果出错.
 FastInput(FastWord)
 {
 	temp=%ClipBoard%        ; 将你粘贴板上的内容取出，保存到一个临时变量
@@ -139,3 +87,34 @@ FastInput(FastWord)
 	send,^v                 ; 把你剪贴板上的内容粘贴出来
 	ClipBoard=%temp%        ; 恢复你剪贴板上原来的内容
 }
+
+
+; 输入? yx显示邮箱 
+:*:?yx::
+FastInput("w_y_wei@qq.com") 
+return
+
+; 输入? gc输出括号里面的内容.
+:*:?gc:: 
+FastInput("git clone ") 
+return
+
+; 输入? ga显示进行提交
+:*:?ga::
+FastInput("git add .") 
+return
+
+; 输入? gm显示进行提交
+:*:?gm::
+FastInput("git commit -m '") 
+return
+
+
+; 选中文字按住. cap+O 进行必应搜索
+CapsLock & o::
+current_clipboard = %Clipboard%
+Send ^c
+ClipWait, 1
+Run http://www.bing.com/search?q=%Clipboard%
+Clipboard = %current_clipboard%
+return

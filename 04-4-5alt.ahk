@@ -5,7 +5,7 @@
 ; # = WIN
 ;LAlt
 
-;;按住alt第二行是数字锄1�7
+;;按住alt第二行是数字1-9-0
 ;; 数字0-9
 LAlt & a::
   Send {1}
@@ -51,7 +51,7 @@ LAlt & l::
   Send {9}
   KeyWait l
   return
-; `是转义字笄1�7.意��是`后面的还是原来的意��1�7
+; `是转义字符`后面的还是原来的意思
 LAlt & `;::
   Send {0}
   KeyWait `;
@@ -112,11 +112,3 @@ LAlt & m::
   Send {+}
   KeyWait m
   return
-
-CapsLock & o::
-current_clipboard = %Clipboard%
-Send ^c
-ClipWait, 1
-Run http://www.bing.com/search?q=%Clipboard%
-Clipboard = %current_clipboard%
-return
