@@ -2,16 +2,16 @@
 SetCapsLockState, AlwaysOff ;
 
 ; git命令相关
-:*:]gc::
+:*:?gc::
 Send, git clone
 Return
 
-; 输入]ga显示进行提交
-:*:]ga::
+; 输入?ga显示进行提交
+:*:?ga::
 Send, git add .{Enter}
 Return
-; 输入]gm进行提交消息
-:*:]gm::
+; 输入?gm进行提交消息
+:*:?gm::
 Send, git commit -m '
 Return
 
