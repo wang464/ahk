@@ -94,6 +94,21 @@ FastInput(FastWord)
 FastInput("w_y_wei@qq.com") 
 return
 
+; 输入? ksvi显示控制面板
+:*:?ksvi::
+FastInput("control") 
+return
+
+; 输入? jisr显示计算器
+:*:?jisr::
+FastInput("calc") 
+return
+
+; 输入? pwvi显示用户配置
+:*:?pwvi::
+FastInput("explorer .") 
+return
+
 ; 输入? gc输出括号里面的内容.
 :*:?gc:: 
 FastInput("git clone ") 
@@ -107,6 +122,11 @@ return
 ; 输入? gm显示进行提交
 :*:?gm::
 FastInput("git commit -m '") 
+return
+
+; 输入? kg管理开机启动项
+:*:?kg::
+FastInput("shell:startup") 
 return
 
 
