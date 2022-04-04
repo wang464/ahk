@@ -66,9 +66,10 @@ CapsLock & l::
   KeyWait l
   return
 
-  ;;回车键
+ ;;回车键
  CapsLock & j::
-  Send {Enter}
+  SendInput,{End}
+  SendInput,{Enter}
   KeyWait j
   return
 
