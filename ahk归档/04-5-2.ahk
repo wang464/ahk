@@ -27,4 +27,5 @@ Alt & v::
   KeyWait v
   return
 
-
+; Send {text}可以发送字符串，用于录入信息
+F1::Send {text}Hello World
