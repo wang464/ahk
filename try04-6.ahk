@@ -1,4 +1,4 @@
-;图标
+﻿;图标
 Menu, Tray, Icon, C:\jpg\mark.ico,,1
 
 F6::pause
@@ -17,11 +17,7 @@ return
 ; Click 275,236,1
 ; return
 ; 修改记事本的设置
-F9::
-InputBox, OutputVar, Question 1, What is your first name?
-if (OutputVar="Bi")
-   MsgBox, That's an awesome name`, %OutputVar%.
-
+F9::goSub, set_title_case
 ;图标
 
 

@@ -1,4 +1,13 @@
-﻿; 光标操作
+﻿; 新增功能
+;;刷新和禁用操作
+CapsLock & w::pause     ;禁用
+CapsLock & q::Reload    ;刷新
+
+NumLock::SetNumLockState, AlwaysOff
+; 禁用小键盘开关
+CapsLock::SetCapsLockState, AlwaysOff 
+; 禁用 Capslock 键
+; 光标操作
 
 ;;光标移动到行首
 CapsLock & a::
@@ -72,11 +81,6 @@ CapsLock & j::
   KeyWait j
 return
 
-;;刷新和禁用操作
-CapsLock & w::pause     ;禁用
-CapsLock & q::Reload    ;刷新
-
-
 
 ; 文字操作
 ; 输入= zz输出括号里面的内容.
@@ -124,5 +128,5 @@ CapsLock & o::
 return
 
 
-; 新增功能
+
 ; 网页翻译功能
