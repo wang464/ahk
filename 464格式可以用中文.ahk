@@ -122,3 +122,7 @@ CapsLock & o::
   Run https://search.bilibili.com/all?keyword=%Clipboard%
   Clipboard = %current_clipboard%
 return
+
+
+; 新增功能
+; 网页翻译功能

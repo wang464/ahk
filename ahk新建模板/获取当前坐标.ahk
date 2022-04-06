@@ -1,9 +1,9 @@
 ; 获取坐标的文本
-F6::pause
-F5::Reload
+; F6::pause
+; F5::Reload
 F8::
 Click 855,132
-
+Menu, Tray, Icon, C:\jpg\number.ico,,1
 ;~ 获取当前光标位置下绝对坐标和相对坐标
 
 ;~ 并将相对坐标复制到剪贴板，可直接粘贴到代码中
