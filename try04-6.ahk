@@ -1,10 +1,20 @@
 ; 获取坐标的文本
+; Menu, Tray, NoIcon
+; IconNum := A_ScriptDir . "\mark.ico" 
+; Menu, Tray, Icon, %IconNum%, , 1
+
 F6::pause
 F5::Reload
 F8::
 Click 1624,21,Right
 Send, {n}
 return
+; Menu, Tray, Icon , FileName, IconNumber, 1
+Menu, Tray, Icon, Shell32.dll, 174.
+; Menu, MenuName, Icon, MenuItemName, C:\jpg,mark.jpg,, 1
+
+; Menu, Tray, Icon, C:\jpg\mark.ico,,1
+
 
 
 
