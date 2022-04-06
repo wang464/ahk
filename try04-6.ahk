@@ -2,7 +2,11 @@
 F6::pause
 F5::Reload
 F8::
-Click 855,132
+Click 1624,21,Right
+Send, {n}
+return
+
+
 
 ;~ 获取当前光标位置下绝对坐标和相对坐标
 
