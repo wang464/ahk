@@ -3,7 +3,7 @@
 CapsLock & w::pause     ;禁用
 CapsLock & q::Reload    ;刷新
 
-NumLock::SetNumLockState, AlwaysOff
+; NumLock::SetNumLockState, AlwaysOff
 ; 禁用小键盘开关
 CapsLock::SetCapsLockState, AlwaysOff 
 ; 禁用 Capslock 键
