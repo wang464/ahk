@@ -5,10 +5,35 @@ F6::pause
 F5::Reload
 
 ; 网页翻译成中文
-F8::
-Click 1253,73,1
-Click 165,225,1
+; F8::
+; Click 1253,73,1
+; Click 165,225,1
 return
+; 制作一个搜索候选功能
+
+F9::
+; SplashImage, ttt.png, b, x900,y400, , , srf_icon, 
+; ;设置一个透明的窗口
+; ; ttt.png就是输入法的图标.需要自己放到jpg文件夹里面
+; ; 现在使用的参数都是gui命令. 原来的参数被放弃了
+; WinSet, Region, 50-0 W200 H250 E, 
+; WinSet, Transparent, 255, srf_icon,
+; ; 允许窗口完全透明Transparent, 0这个就是窗口透明的参数
+; ; 如果是0就是完全透明,255就是完全透明
+; WinSet, ExStyle, +0*20, srf_icon,
+; ; 允许鼠标穿透 允许鼠标无视这个窗口
+; WinSet, AlwaysOnTop, on, srf_icon,
+; ; 窗口置顶
+; 建立了一个“透明+允许鼠标穿透+置顶在最前面”
+; 的窗口(其中X220 Y400是屏幕坐标位置)
+
+
+
+
+
+
+
+
 
 
 ; ; 网页不进行翻译
@@ -16,8 +41,8 @@ return
 ; Click 1247,77,1
 ; Click 275,236,1
 ; return
-; 修改记事本的设置
-F9::goSub, set_title_case
+
+
 ;图标
 
 
