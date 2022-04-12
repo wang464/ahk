@@ -8,10 +8,67 @@ F5::Reload
 ; F8::
 ; Click 1253,73,1
 ; Click 165,225,1
-return
+; return
 ; 制作一个搜索候选功能
-
+; Gui, my:New, Param2, Param3, Param4]
 F9::
+Gui, Destroy
+	Gui +AlwaysOnTop
+	; Gui Add, Button, gChoiceA w100, 800x600
+	; Gui Add, Button, gChoiceB w100, 1080x720
+	Gui Add, Button, gChoiceC w100, 800x800
+	Gui Add, Button, gChoiceD w100, FullA
+	Gui Add, Button, gChoiceE w100, FullB
+	Gui Add, Button, gChoiceF w100, FullC
+	Gui, Show, AutoSize Center
+Return
+
+ChoiceA:
+	sleep, 1000
+	WinMove, A, , 10, 10,800, 600
+Return
+
+ChoiceB:
+	sleep, 1000
+	winmove, a, , 10, 10, 1080, 720
+Return
+
+ChoiceC:
+	sleep, 1000
+	winmove, a, , 10, 10, 800, 800
+Return
+
+ChoiceD:
+	sleep, 1000
+	Winset, Style, ^0xC00000, A
+	WinSet, Style, ^0x40000, A
+	WinMaximize, A
+return
+
+ChoiceE:
+	sleep, 1000
+	If hideTitleTogglex := !hideTitleTogglex
+	{
+		WinSet, Style, -0x40000, A
+		WinSet, Style, -0xC00000, A
+	}
+	else
+	{
+		WinSet, Style, +0x40000, A
+		WinSet, Style, +0xC00000, A
+	}
+return
+
+ChoiceF:
+	sleep, 1000
+	If hideTitleToggle := !hideTitleToggle
+		WinSet, Style, -0x400000, A
+	else
+		WinSet, Style, +0x400000, A
+return
+
+
+
 ; SplashImage, ttt.png, b, x900,y400, , , srf_icon, 
 ; ;设置一个透明的窗口
 ; ; ttt.png就是输入法的图标.需要自己放到jpg文件夹里面

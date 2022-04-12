@@ -8,7 +8,6 @@ CapsLock & q::Reload    ;刷新
 CapsLock::SetCapsLockState, AlwaysOff 
 ; 禁用 Capslock 键
 ; 光标操作
-
 ;;光标移动到行首
 CapsLock & a::
   if getkeystate("alt") = 0
