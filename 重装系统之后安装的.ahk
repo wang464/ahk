@@ -20,6 +20,7 @@ Gui, Destroy
     Gui, Add, Link,, <a href="https://wx.qq.com/">下载微信</a>
     Gui, Add, Link,, <a href="https://www.yinxiang.com/">印象笔记</a>
     Gui, Add, Link,, <a href="https://im.qq.com/download/index.shtml">下载QQ</a>
+    Gui, Add, Link,, <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35460">鼠标共享</a>
     
     ; ; 下拉列表
     ; Gui, Add, DropDownList, vColorChoice, Black|White|Red|Green|Blue
