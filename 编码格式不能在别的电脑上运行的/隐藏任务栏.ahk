@@ -1,4 +1,4 @@
-﻿; ; 任务失败
+; ; 任务失败
 ; ;;回车键
 ; CapsLock & v::
 ;   Send {LBotton}

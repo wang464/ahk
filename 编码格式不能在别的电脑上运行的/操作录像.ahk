@@ -1,27 +1,35 @@
 ﻿#SingleInstance, Force
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
+; 来源https://www.autoahk.com/archives/38566 
+
 F6::pause
 F5::Reload
 
-
-;-- luxiang热键
-F7:: luxiangji.luxiang()
-;-- tingzhiluxiang或huifang
-F8:: luxiangji.tingzhi()
-;-- huifang热键
-F9:: luxiangji.huifang()
-;-- chak和修改记录
-; F4:: luxiangji.chak()
+;---------------------------------
+;  鼠标键盘录像机（傻瓜版） v1.0  By FeiYue
+;
+;  使用说明：
+;  1、F1录像，F2停止录像或回放，F3回放，F4查看和修改记录
+;  2、查看的记录可以复制到用户脚本中使用（就是太长了^_^）
+;---------------------------------
+;-- 录像热键
+F1:: 录像机.录像()
+;-- 停止录像或回放
+F2:: 录像机.停止()
+;-- 回放热键
+F3:: 录像机.回放()
+;-- 查看和修改记录
+F4:: 录像机.查看()
 ;======== 下面是函数 ========
-Class luxiangji { ;==> 类开始
+Class 录像机 { ;==> 类开始
   static oldx, oldy, oldt, ok, text
-  luxiang() {
+  录像() {
     if (this.ok=1)
       this.ok:=0, this.ReStart(A_ThisFunc)
     SetFormat, IntegerFast, d
     CoordMode, ToolTip
-    ToolTip, 正在luxiang——, A_ScreenWidth//2-100, 0
+    ToolTip, 正在录像——, A_ScreenWidth//2-100, 0
     this.ok:=1, this.text:="s=`r`n"
     this.oldx:="", this.oldy:="", this.oldt:=A_TickCount
     this.SetHotkey(1)
@@ -33,11 +41,11 @@ Class luxiangji { ;==> 类开始
     ListLines, On
     SetTimer, %r%, Off
     this.SetHotkey(0)
-    this.text .= "luxiangji.huifang(s)`r`n"
+    this.text .= "录像机.回放(s)`r`n"
     ToolTip
     return this.text
   }
-  huifang(s="") {
+  回放(s="") {
     if (s="")
       s:=this.text
     else
@@ -47,7 +55,7 @@ Class luxiangji { ;==> 类开始
     SetMouseDelay, -1
     CoordMode, Mouse
     CoordMode, ToolTip
-    ToolTip, 正在huifang——, A_ScreenWidth//2-100, 0
+    ToolTip, 正在回放——, A_ScreenWidth//2-100, 0
     this.ok:=1
     Loop, Parse, s, |
     {
@@ -71,7 +79,7 @@ Class luxiangji { ;==> 类开始
     ToolTip
     this.ok:=0
   }
-  chak() {
+  查看() {
     if (this.ok=1)
       this.ok:=0, this.ReStart(A_ThisFunc)
     Gui, New, +LastFound +AlwaysOnTop
@@ -87,7 +95,7 @@ Class luxiangji { ;==> 类开始
     this.text:=r
     Gui, Destroy
   }
-  tingzhi() {
+  停止() {
     this.ok:=0
   }
   LogPos() {
