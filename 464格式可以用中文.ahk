@@ -1,7 +1,7 @@
 ﻿; 新增功能
 ;;刷新和禁用操作
-CapsLock & w::pause     ;禁用
-CapsLock & q::Reload    ;刷新
+CapsLock & w::pause ;禁用
+CapsLock & q::Reload ;刷新
 
 ; NumLock::SetNumLockState, AlwaysOff
 ; 禁用小键盘开关
@@ -49,7 +49,6 @@ CapsLock & i::
   ; KeyWait i
 return
 
-
 ;光标向后选择
 CapsLock & k::
   Send +{End}
@@ -86,7 +85,6 @@ CapsLock & j::
   SendInput,{Enter}
   KeyWait j
 return
-
 
 ; 文字操作
 ; 输入= zz输出括号里面的内容.
@@ -135,17 +133,28 @@ return
 
 ; 复制鼠标当前坐标
 CapsLock & c::
- { 
-CoordMode, ToolTip, Screen
-; 表示获取绝对坐标
- MouseGetPos, xs, ys , id2, control
-; 鼠标点击的位置的坐标
-;  MsgBox, %xs%`,%ys%
-;  弹窗坐标的窗口
- ;复制click坐标到剪贴板
- Clipboard = Click %xs%`,%ys%
- }
+  { 
+    CoordMode, ToolTip, Screen
+    ; 表示获取绝对坐标
+    MouseGetPos, xs, ys , id2, control
+    ; 鼠标点击的位置的坐标
+    ;  MsgBox, %xs%`,%ys%
+    ;  弹窗坐标的窗口
+    ;复制click坐标到剪贴板
+    Clipboard = Click %xs%`,%ys%
+  }
 return
 
+; 鼠标控制音量
+#If MouseIsOver("ahk_class Shell_TrayWnd")
 
+WheelUp::Send {Volume_Up}
+
+WheelDown::Send {Volume_Down}
+
+MouseIsOver(WinTitle) {
+
+  MouseGetPos,,, Win
+
+return WinExist(WinTitle . " ahk_id " . Win)
 ; 网页翻译功能
