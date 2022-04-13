@@ -157,4 +157,7 @@ MouseIsOver(WinTitle) {
   MouseGetPos,,, Win
 
 return WinExist(WinTitle . " ahk_id " . Win)
+
+}
+
 ; 网页翻译功能
