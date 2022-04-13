@@ -2,10 +2,6 @@
 ;鍋氫负璇曢獙鏂囨。#SingleInstance, Force
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
-F6::pause
-F5::Reload
-
-F7::
 Gui, Destroy
     ; 锟斤拷锟斤拷锟矫讹拷
 	Gui +AlwaysOnTop
@@ -78,3 +74,6 @@ Return
 ChoiceF:
     run https://im.qq.com/download/index.shtml
 Return
+
+F6::pause
+F5::Reload

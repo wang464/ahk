@@ -133,6 +133,19 @@ CapsLock & o::
   Clipboard = %current_clipboard%
 return
 
+; 复制鼠标当前坐标
+CapsLock & c::
+ { 
+CoordMode, ToolTip, Screen
+; 表示获取绝对坐标
+ MouseGetPos, xs, ys , id2, control
+; 鼠标点击的位置的坐标
+;  MsgBox, %xs%`,%ys%
+;  弹窗坐标的窗口
+ ;复制click坐标到剪贴板
+ Clipboard = Click %xs%`,%ys%
+ }
+return
 
 
 ; 网页翻译功能

@@ -12,7 +12,7 @@ F8:: luxiangji.tingzhi()
 ;-- huifang热键
 F9:: luxiangji.huifang()
 ;-- chak和修改记录
-; F4:: luxiangji.chak()
+; F10:: luxiangji.chak()
 ;======== 下面是函数 ========
 Class luxiangji { ;==> 类开始
   static oldx, oldy, oldt, ok, text

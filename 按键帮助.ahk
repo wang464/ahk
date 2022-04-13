@@ -5,3 +5,8 @@ Tab Q W E R T Y U IO P [ ] \
 CapsLock A S D Fw G H J K L ; ' Enter
 LShift Z X C V B N M , . / RShift
 LCtl LWin LAlt Spcce RAlt RWin AppsKey RCtrl
+
+win#
+alt!
+Shift+
+Ctrl^
