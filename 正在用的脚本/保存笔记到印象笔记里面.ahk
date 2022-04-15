@@ -3,6 +3,7 @@ SendMode Input
 SetWorkingDir, %A_ScriptDir%
 ; 先想想怎么写.的
 F6::pause
+; F6::Send,^{F4}
 F5::Reload
 
 
@@ -25,7 +26,7 @@ run,"C:\Program Files (x86)\Yinxiang Biji\印象笔记\Evernote.exe"
 Sleep, 800
 Send, #{Up}
 ; 全屏
-Sleep, 800
+Sleep, 1800
 Click 106,228.
 Sleep, 800
 ; 点击了新建md
@@ -46,6 +47,8 @@ Sleep, 300
 Send, {F3}
 Sleep, 300
 Send, ahk
+Sleep, 300
+Send, {Enter}
 Sleep, 300
 Send, {Enter}
 Sleep, 300
