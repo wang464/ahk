@@ -52,7 +52,7 @@ Send, {Enter}
 Sleep, 300
 Send, {Enter}
 Sleep, 300
-Send, ^{F4}
+Send, !{F4}
 ; MsgBox, "完成"
 return
 
