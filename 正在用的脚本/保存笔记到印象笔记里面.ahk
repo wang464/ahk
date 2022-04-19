@@ -27,7 +27,7 @@ Sleep, 800
 Send, #{Up}
 ; 全屏
 Sleep, 1800
-Click 106,228.
+Click 59,248
 Sleep, 800
 ; 点击了新建md
 Click 159,151
