@@ -28,7 +28,7 @@ F8::
     Sleep, 500
     Click 1635,869
 return
-; #IfWinActive
+#IfWinActive
 
 ; #If ActiveControlIsOfClass("Edit")
 ; F7::Send ^+{Left}{Del}
