@@ -43,15 +43,15 @@ CapsLock & p::
   ; KeyWait p
 return
 
-#IfWinActive ahk_class Chrome_WidgetWin_1
+; 光标翻页功能只在浏览器窗口生效
+#IfWinActive ahk_exe msedge.exe
 CapsLock & p::
     Send, {WheelUp 1}
 return
 CapsLock & n::
   Send, {WheelDown 1}
 return
-#IfWinActive ahk_class Chrome_WidgetWin_1
-
+#IfWinActive
 
 
 
