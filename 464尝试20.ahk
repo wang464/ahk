@@ -24,13 +24,26 @@ return
 ;;光标左移
 CapsLock & b::
   Send {Left}
-  KeyWait b
+  KeyWait f
 return
 ;;光标右移
 CapsLock & f::
   Send {Right}
   KeyWait f
 return
+; 左右窗口移动功能只在浏览器窗口生效
+#IfWinActive ahk_exe msedge.exe
+CapsLock & f::
+    Send, ^{tab}
+    ; Ctrl的缩写就是^所以这句话的意思是Ctrl+Tab
+    KeyWait f
+return
+CapsLock & b::
+  Send, ^+{tab}
+    ; Ctrl的缩写就是^所以这句话的意思是Ctrl+shift+Tab
+  KeyWait f
+return
+#IfWinActive
 
 ;;光标下移
 CapsLock & n::
@@ -71,6 +84,22 @@ CapsLock & u::
   Send +{Home}
   KeyWait u
 return 
+
+; 倍速播放只在抖音窗口生效
+#IfWinActive ahk_exe douyin.exe
+; 1.25倍速
+CapsLock & k::
+    Click 1646,1022
+    Sleep, 500
+    Click 1637,903
+return
+; 1倍速
+CapsLock & u::
+    Click 1646,1022
+    Sleep, 500
+    Click 1635,869
+return
+#IfWinActive
 
 ; 删除操作
 ;;向右删除单词
