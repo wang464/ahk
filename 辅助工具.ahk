@@ -8,6 +8,23 @@ F6::pause
 F5::Reload
 
 ; F7::
+
+
+; 活动窗口的控件列表中提取每个控件的名称.
+F7::
+WinGet, ActiveControlList, ControlList, A
+Loop, Parse, ActiveControlList, `n
+{
+    MsgBox, 4,, Control #%A_Index% is "%A_LoopField%". Continue?
+    IfMsgBox, No
+        break
+}
+
+; 最大化活动窗口
+; WinGet, active_id, ID, A
+; WinMaximize, ahk_id %active_id%
+
+; F7::
 ; Click 873,892
 ; sleep,800
 ; Click 878,614

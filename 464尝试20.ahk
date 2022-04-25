@@ -176,6 +176,7 @@ return
 ; 在obsidian里面输入. cap+O 功能等同于Ctrl+O
 #IfWinActive ahk_exe Obsidian.exe
 CapsLock & o::^o
+CapsLock & ,::^+,
 #IfWinActive
 ; 复制鼠标当前坐标
 CapsLock & c::
