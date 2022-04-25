@@ -1,6 +1,18 @@
 ﻿; 新增功能
-;;刷新和禁用操作
-CapsLock & w::pause ;禁用
+; 关闭当前窗口
+CapsLock & w::
+WinGetActiveTitle, Title
+WinClose, %Title%
+return
+; 在edge浏览器里面只关闭当前页面
+#IfWinActive ahk_exe msedge.exe
+CapsLock & w::^w
+#IfWinActive
+; 在vscode里面只关闭当前页面
+#IfWinActive ahk_exe Code.exe
+CapsLock & w::^w
+#IfWinActive
+
 CapsLock & q::Reload ;刷新
 
 ; NumLock::SetNumLockState, AlwaysOff
