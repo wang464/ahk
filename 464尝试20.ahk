@@ -88,17 +88,19 @@ return
 ; 倍速播放只在抖音窗口生效
 #IfWinActive ahk_exe douyin.exe
 ; 1.25倍速
-CapsLock & k::
+d::
     Click 1646,1022
     Sleep, 500
     Click 1637,903
 return
 ; 1倍速
-CapsLock & u::
+a::
     Click 1646,1022
     Sleep, 500
     Click 1635,869
 return
+s::Down
+w::Up
 #IfWinActive
 
 ; 删除操作
@@ -150,7 +152,7 @@ return
 
 ; 输入= gc输出括号里面的内容.
 :*:=gc:: 
-  Send, git clone 
+  FastInput("git clone ") 
 return
 
 ; 输入= ga显示进行提交
@@ -164,14 +166,17 @@ return
 return
 
 ; 选中文字按住. cap+O 进行哔哩哔哩搜索
-CapsLock & o::
+
   current_clipboard = %Clipboard%
   Send ^c
   ClipWait, 1
   Run https://search.bilibili.com/all?keyword=%Clipboard%
   Clipboard = %current_clipboard%
 return
-
+; 在obsidian里面输入. cap+O 功能等同于Ctrl+O
+#IfWinActive ahk_exe Obsidian.exe
+CapsLock & o::^o
+#IfWinActive
 ; 复制鼠标当前坐标
 CapsLock & c::
   { 

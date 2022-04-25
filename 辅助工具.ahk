@@ -1,6 +1,9 @@
 ﻿#SingleInstance, Force
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
+; 更换图标
+IconNum := A_ScriptDir . "\mark.ico" 
+Menu, Tray, Icon, %IconNum%, , 1
 F6::pause
 F5::Reload
 
@@ -15,20 +18,20 @@ F5::Reload
 ; WinGetActiveTitle, Title
 ; WinClose, %Title%
 ; return
-; 光标翻页功能只在浏览器窗口生效
-#IfWinActive ahk_exe douyin.exe
-; 1.25倍速
-F7::
-    Click 1646,1022
-    Sleep, 500
-    Click 1637,903
-return
-F8::
-    Click 1646,1022
-    Sleep, 500
-    Click 1635,869
-return
-#IfWinActive
+; ; 光标翻页功能只在浏览器窗口生效
+; #IfWinActive ahk_exe douyin.exe
+; ; 1.25倍速
+; F7::
+;     Click 1646,1022
+;     Sleep, 500
+;     Click 1637,903
+; return
+; F8::
+;     Click 1646,1022
+;     Sleep, 500
+;     Click 1635,869
+; return
+; #IfWinActive
 
 ; #If ActiveControlIsOfClass("Edit")
 ; F7::Send ^+{Left}{Del}
