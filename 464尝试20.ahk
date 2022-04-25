@@ -6,6 +6,7 @@ WinClose, %Title%
 return
 ; 在edge浏览器里面只关闭当前页面
 #IfWinActive ahk_exe msedge.exe
+; 在edge浏览器里面只关闭当前页面
 CapsLock & w::^w
 #IfWinActive
 ; 在vscode里面只关闭当前页面
