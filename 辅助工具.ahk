@@ -7,11 +7,47 @@ Menu, Tray, Icon, %IconNum%, , 1`
 F6::pause
 F5::Reload
 
-; F7::
-#IfWinActive ahk_exe Obsidian.exe
+; TAB::
+; if (NumsLineLock=1)
+; {
+;   NumsLineLock:=""
+; }
+; else
+; {
+;   NumsLineLock:=1
+; }
+; ; CapsLock2:=""
+; return
+; #If
 
-#IfWinActive
-CapsLock & `::^+!`
+; #if NumsLineLock
+; 0::SendInput {)}
+; 1::SendInput {!}
+; 2::SendInput {@}
+; 3::SendInput {+}
+; 4::SendInput {$}
+; 5::SendInput {`%}
+; 6::SendInput {^}
+; 7::SendInput {&}
+; 8::SendInput {*}
+; 9::SendInput {(}
+; +0::SendInput {0}
+; +1::SendInput {1}
+; +2::SendInput {2}
+; +3::SendInput {3}
+; +4::SendInput {4}
+; +5::SendInput {5}
+; +6::SendInput {6}
+; +7::SendInput {7}
+; +8::SendInput {8}
+; +9::SendInput {9}
+; #If
+
+; ; F7::
+; #IfWinActive ahk_exe Obsidian.exe
+
+; #IfWinActive
+; CapsLock & `::^+!`
 
 ; ; 只在搜狗中生效的测试
 ; #if WinExist("ahk_class SoPY_Comp")
