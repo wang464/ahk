@@ -7,27 +7,42 @@ Menu, Tray, Icon, %IconNum%, , 1`
 F6::pause
 F5::Reload
 
-CapsLock::
-CapsLock2:=CapsLock:=1
-KeyWait, CapsLock
-if CapsLock2
-  SendInput, {Esc}
-CapsLock2:=CapsLock:=""
-Return
 
-#If CapsLock
 
-o::
-SendInput,{End}
-SendInput,{Enter}
-CapsLock2:=""
-Return
 
-a::
-SendInput,{Home}
-CapsLock2:=""
-Return
-#If
+
+
+; o::
+; Run https://search.bilibili.com/all?keyword=%Clipboard%
+; Return
+; CapsLock::
+; CapsLock2:=CapsLock:=1
+; KeyWait, CapsLock
+; if CapsLock2
+;   SendInput, {Esc}
+; CapsLock2:=CapsLock:=""
+; Return
+
+; #If CapsLock
+; o::
+; Run https://search.bilibili.com/all?keyword=%Clipboard%
+; Return
+; q::
+; SendInput,^+!q
+; CapsLock2:=""
+; Return
+
+; o::
+; SendInput,{End}
+; SendInput,{Enter}
+; CapsLock2:=""
+; Return
+
+; a::
+; SendInput,{Home}
+; CapsLock2:=""
+; Return
+; #If
 ; 按住tab数字键盘功能切换
 ; TAB::
 ; if (NumsLineLock=1)
@@ -126,3 +141,11 @@ Return
 
 ; Click 1625,1021  1倍
 
+#IfWinActive ahk_exe Obsidian.exe
+; CapsLock & o::^o
+; CapsLock & ,::^+,
+; ; CapsLock & q::^+!q
+; #IfWinActive
+
+; https://search.bilibili.com/all?keyword=Obsidian.exe
+; https://search.bilibili.com/all?keyword=%E4%BD%A0%E5%A5%BD%E5%95%8A

@@ -2,6 +2,13 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 ; 正式内容
+CapsLock & o::
+  current_clipboard = %Clipboard%
+  Send ^c
+  ClipWait, 1
+  Run https://search.bilibili.com/all?keyword=%Clipboard%
+  Clipboard = %current_clipboard%
+return
 ; 大写单独按就是esc
 ; 大写搭配其他案件就是其他功能
 CapsLock::
@@ -13,6 +20,12 @@ CapsLock2:=CapsLock:=""
 Return
 ; 大写搭配其他按键
 #If CapsLock
+; 打开复制工具
+q::
+SendInput,^+!q
+CapsLock2:=""
+Return
+
 ; 光标操作
 ; 光标移动到行末
 a::
@@ -96,14 +109,21 @@ c::
     Clipboard = Click %xs%`,%ys%
   }
 return
-; 复制的内容到哔哩哔哩进行搜索
+; 如果是在obsidian里面则是等同于C+o
+#IfWinActive ahk_exe Obsidian.exe
 o::
-  current_clipboard = %Clipboard%
-  Send ^c
-  ClipWait, 1
-  Run https://search.bilibili.com/all?keyword=%Clipboard%
-  Clipboard = %current_clipboard%
-return
+SendInput,^o
+CapsLock2:=""
+Return
+; 如果是在obsidian里面则是等同于设置
+,::
+SendInput,^+,
+CapsLock2:=""
+Return
+#IfWinActive
+
+;;;;;;;;;;;;;;;;;;;;;;;;;04-26之后新增;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 #If
 
@@ -194,8 +214,9 @@ s::Down
 w::Up
 #IfWinActive
 ; 在obsidian里面输入. cap+O 功能等同于Ctrl+O
-#IfWinActive ahk_exe Obsidian.exe
-CapsLock & o::^o
-CapsLock & ,::^+,
-#IfWinActive
+; #IfWinActive ahk_exe Obsidian.exe
+; CapsLock & o::^o
+; CapsLock & ,::^+,
+; ; CapsLock & q::^+!q
+; #IfWinActive
 
