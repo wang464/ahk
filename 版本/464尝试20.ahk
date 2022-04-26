@@ -174,7 +174,7 @@ return
 return
 
 ; 选中文字按住. cap+O 进行哔哩哔哩搜索
-
+CapsLock & o::
   current_clipboard = %Clipboard%
   Send ^c
   ClipWait, 1
