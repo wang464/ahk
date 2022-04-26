@@ -10,7 +10,15 @@ F5::Reload
 
 
 
-
+; CapsLock & o::
+;   current_clipboard = %Clipboard%
+;   Send ^c
+;   ClipWait, 1
+;   Run https://search.bilibili.com/all?keyword=%Clipboard%
+;   Clipboard = %current_clipboard%
+;   KeyWait CapsLock
+;   KeyWait o
+; return
 
 ; o::
 ; Run https://search.bilibili.com/all?keyword=%Clipboard%

@@ -2,13 +2,6 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 ; 正式内容
-CapsLock & o::
-  current_clipboard = %Clipboard%
-  Send ^c
-  ClipWait, 1
-  Run https://search.bilibili.com/all?keyword=%Clipboard%
-  Clipboard = %current_clipboard%
-return
 ; 大写单独按就是esc
 ; 大写搭配其他案件就是其他功能
 CapsLock::
@@ -74,6 +67,7 @@ SendInput,{Del}
 CapsLock2:=""
 Return
 ;;向左删除单词
+h::
 SendInput,{Backspace}
 CapsLock2:=""
 Return
