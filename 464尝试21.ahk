@@ -13,13 +13,6 @@ CapsLock2:=CapsLock:=""
 Return
 ; 大写搭配其他按键
 #If CapsLock
-
-o::
-SendInput,{End}
-SendInput,{Enter}
-CapsLock2:=""
-Return
-
 ; 光标操作
 ; 光标移动到行末
 a::
