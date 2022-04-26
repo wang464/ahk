@@ -158,11 +158,6 @@ FastInput(FastWord)
   ClipBoard=%temp% ; 恢复你剪贴板上原来的内容
 }
 
-; 输入= yx显示邮箱 
-:*:=yx::
-  FastInput("w_y_wei@qq.com") 
-return
-
 ; 输入= gc输出括号里面的内容.
 :*:=gc:: 
   FastInput("git clone ") 

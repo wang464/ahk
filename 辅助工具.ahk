@@ -7,6 +7,28 @@ Menu, Tray, Icon, %IconNum%, , 1`
 F6::pause
 F5::Reload
 
+CapsLock::
+CapsLock2:=CapsLock:=1
+KeyWait, CapsLock
+if CapsLock2
+  SendInput, {Esc}
+CapsLock2:=CapsLock:=""
+Return
+
+#If CapsLock
+
+o::
+SendInput,{End}
+SendInput,{Enter}
+CapsLock2:=""
+Return
+
+a::
+SendInput,{Home}
+CapsLock2:=""
+Return
+#If
+; 按住tab数字键盘功能切换
 ; TAB::
 ; if (NumsLineLock=1)
 ; {
